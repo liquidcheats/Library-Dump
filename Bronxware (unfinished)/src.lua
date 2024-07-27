@@ -1,25 +1,13 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local Bronxware = Instance.new("ScreenGui")
 local Background = Instance.new("Frame")
 local HeaderOutline = Instance.new("Frame")
 local Header = Instance.new("Frame")
 local GuiTitle = Instance.new("TextLabel")
-local LuaTab = Instance.new("ImageButton")
-local LuaFrame = Instance.new("Frame")
-local LuaOutline = Instance.new("Frame")
-local LuaTitle = Instance.new("TextLabel")
-local LuaItem = Instance.new("Frame")
-local LUAItemUIListLayout = Instance.new("UIListLayout")
-local LUAItemUIPadding = Instance.new("UIPadding")
-local LuaDropdown = Instance.new("Frame")
-local DropdownTitle = Instance.new("TextLabel")
-local ItemDropdownBackground = Instance.new("Frame")
-local ItemName = Instance.new("TextLabel")
-local LoadLua = Instance.new("TextButton")
-local DeleteLua = Instance.new("TextButton")
-local Save = Instance.new("TextButton")
-local SaveTitle = Instance.new("TextLabel")
-local Use = Instance.new("TextButton")
-local UseTitle = Instance.new("TextLabel")
 local ItemBackground = Instance.new("Frame")
 local ItemUIListLayout = Instance.new("UIListLayout")
 local Left = Instance.new("Frame")
@@ -42,6 +30,10 @@ local LabelTitle = Instance.new("TextLabel")
 local Button = Instance.new("TextButton")
 local Input = Instance.new("TextBox")
 local InptTitle = Instance.new("TextLabel")
+local Dropdown = Instance.new("Frame")
+local BDropdownTitle = Instance.new("TextLabel")
+local DropdownBG = Instance.new("Frame")
+local OptionDropdown = Instance.new("TextButton")
 local ItemUIPadding = Instance.new("UIPadding")
 local Right = Instance.new("Frame")
 local RightUIPadding_2 = Instance.new("UIPadding")
@@ -56,6 +48,8 @@ local UISettingsPadding = Instance.new("UIPadding")
 local Watermark = Instance.new("Frame")
 local WatermarkOutline = Instance.new("Frame")
 local WatermarkTitle = Instance.new("TextLabel")
+
+--Properties:
 
 Bronxware.Name = "Bronxware"
 Bronxware.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -94,178 +88,6 @@ GuiTitle.Font = Enum.Font.Unknown
 GuiTitle.Text = "Bronxware"
 GuiTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 GuiTitle.TextSize = 16.000
-
-LuaTab.Name = "LuaTab"
-LuaTab.Parent = Header
-LuaTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LuaTab.BackgroundTransparency = 1.000
-LuaTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LuaTab.BorderSizePixel = 0
-LuaTab.Position = UDim2.new(0.951534748, 0, 0.111111112, 0)
-LuaTab.Size = UDim2.new(0, 23, 0, 20)
-LuaTab.Image = "rbxassetid://7733749837"
-LuaTab.ScaleType = Enum.ScaleType.Fit
-
-LuaFrame.Name = "LuaFrame"
-LuaFrame.Parent = Header
-LuaFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-LuaFrame.BorderColor3 = Color3.fromRGB(44, 44, 44)
-LuaFrame.Position = UDim2.new(1.01130855, 0, -0.111110546, 0)
-LuaFrame.Size = UDim2.new(0, 180, 0, 151)
-
-LuaOutline.Name = "LuaOutline"
-LuaOutline.Parent = LuaFrame
-LuaOutline.BackgroundColor3 = Color3.fromRGB(84, 101, 255)
-LuaOutline.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LuaOutline.BorderSizePixel = 0
-LuaOutline.Size = UDim2.new(0, 180, 0, 2)
-
-LuaTitle.Name = "LuaTitle"
-LuaTitle.Parent = LuaFrame
-LuaTitle.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-LuaTitle.BackgroundTransparency = 1.000
-LuaTitle.BorderColor3 = Color3.fromRGB(47, 47, 47)
-LuaTitle.Position = UDim2.new(0, 0, 0.0245901644, 0)
-LuaTitle.Size = UDim2.new(0, 180, 0, 10)
-LuaTitle.Font = Enum.Font.Unknown
-LuaTitle.Text = "Lua File (unfinished)"
-LuaTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-LuaTitle.TextSize = 14.000
-
-LuaItem.Name = "LuaItem"
-LuaItem.Parent = LuaFrame
-LuaItem.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LuaItem.BackgroundTransparency = 1.000
-LuaItem.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LuaItem.BorderSizePixel = 0
-LuaItem.Position = UDim2.new(-0.00163167319, 0, 0.0721924603, 0)
-LuaItem.Size = UDim2.new(0, 180, 0, 142)
-
-LUAItemUIListLayout.Name = "LUAItemUIListLayout"
-LUAItemUIListLayout.Parent = LuaItem
-LUAItemUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-LUAItemUIListLayout.Padding = UDim.new(0, 5)
-
-LUAItemUIPadding.Name = "LUAItemUIPadding"
-LUAItemUIPadding.Parent = LuaItem
-LUAItemUIPadding.PaddingBottom = UDim.new(0, 5)
-LUAItemUIPadding.PaddingLeft = UDim.new(0, 5)
-LUAItemUIPadding.PaddingRight = UDim.new(0, 5)
-LUAItemUIPadding.PaddingTop = UDim.new(0, 5)
-
-LuaDropdown.Name = "LuaDropdown"
-LuaDropdown.Parent = LuaItem
-LuaDropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LuaDropdown.BackgroundTransparency = 1.000
-LuaDropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LuaDropdown.BorderSizePixel = 0
-LuaDropdown.Size = UDim2.new(0, 169, 0, 35)
-
-DropdownTitle.Name = "DropdownTitle"
-DropdownTitle.Parent = LuaDropdown
-DropdownTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-DropdownTitle.BackgroundTransparency = 1.000
-DropdownTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DropdownTitle.BorderSizePixel = 0
-DropdownTitle.Size = UDim2.new(0, 168, 0, 15)
-DropdownTitle.Font = Enum.Font.Unknown
-DropdownTitle.Text = "Lua(s)"
-DropdownTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-DropdownTitle.TextSize = 14.000
-DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-ItemDropdownBackground.Name = "ItemDropdownBackground"
-ItemDropdownBackground.Parent = LuaDropdown
-ItemDropdownBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-ItemDropdownBackground.BorderColor3 = Color3.fromRGB(44, 44, 44)
-ItemDropdownBackground.Position = UDim2.new(0, 0, 0.5, 0)
-ItemDropdownBackground.Size = UDim2.new(0, 168, 0, 15)
-
-ItemName.Name = "ItemName"
-ItemName.Parent = ItemDropdownBackground
-ItemName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ItemName.BackgroundTransparency = 1.000
-ItemName.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ItemName.BorderSizePixel = 0
-ItemName.Position = UDim2.new(0.0422088802, 0, 0, 0)
-ItemName.Size = UDim2.new(0, 161, 0, 15)
-ItemName.Font = Enum.Font.Unknown
-ItemName.Text = "None"
-ItemName.TextColor3 = Color3.fromRGB(255, 255, 255)
-ItemName.TextSize = 14.000
-ItemName.TextXAlignment = Enum.TextXAlignment.Left
-
-LoadLua.Name = "LoadLua"
-LoadLua.Parent = LuaItem
-LoadLua.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-LoadLua.BorderColor3 = Color3.fromRGB(33, 33, 33)
-LoadLua.Size = UDim2.new(0, 169, 0, 17)
-LoadLua.AutoButtonColor = false
-LoadLua.Font = Enum.Font.Unknown
-LoadLua.Text = "Load"
-LoadLua.TextColor3 = Color3.fromRGB(255, 255, 255)
-LoadLua.TextSize = 14.000
-
-DeleteLua.Name = "DeleteLua"
-DeleteLua.Parent = LuaItem
-DeleteLua.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-DeleteLua.BorderColor3 = Color3.fromRGB(33, 33, 33)
-DeleteLua.Size = UDim2.new(0, 169, 0, 17)
-DeleteLua.AutoButtonColor = false
-DeleteLua.Font = Enum.Font.Unknown
-DeleteLua.Text = "Delete"
-DeleteLua.TextColor3 = Color3.fromRGB(255, 255, 255)
-DeleteLua.TextSize = 14.000
-
-Save.Name = "Save"
-Save.Parent = LuaItem
-Save.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Save.BorderColor3 = Color3.fromRGB(33, 33, 33)
-Save.Size = UDim2.new(0, 15, 0, 15)
-Save.AutoButtonColor = false
-Save.Font = Enum.Font.SourceSans
-Save.Text = ""
-Save.TextColor3 = Color3.fromRGB(0, 0, 0)
-Save.TextSize = 14.000
-
-SaveTitle.Name = "SaveTitle"
-SaveTitle.Parent = Save
-SaveTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SaveTitle.BackgroundTransparency = 1.000
-SaveTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SaveTitle.BorderSizePixel = 0
-SaveTitle.Position = UDim2.new(1.5333333, 0, 0, 0)
-SaveTitle.Size = UDim2.new(0, 146, 0, 15)
-SaveTitle.Font = Enum.Font.Unknown
-SaveTitle.Text = "Save"
-SaveTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-SaveTitle.TextSize = 14.000
-SaveTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-Use.Name = "Use"
-Use.Parent = LuaItem
-Use.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Use.BorderColor3 = Color3.fromRGB(33, 33, 33)
-Use.Size = UDim2.new(0, 15, 0, 15)
-Use.AutoButtonColor = false
-Use.Font = Enum.Font.SourceSans
-Use.Text = ""
-Use.TextColor3 = Color3.fromRGB(0, 0, 0)
-Use.TextSize = 14.000
-
-UseTitle.Name = "UseTitle"
-UseTitle.Parent = Use
-UseTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UseTitle.BackgroundTransparency = 1.000
-UseTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UseTitle.BorderSizePixel = 0
-UseTitle.Position = UDim2.new(1.5333333, 0, 0, 0)
-UseTitle.Size = UDim2.new(0, 146, 0, 15)
-UseTitle.Font = Enum.Font.Unknown
-UseTitle.Text = "Use .lua .txt"
-UseTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-UseTitle.TextSize = 14.000
-UseTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 ItemBackground.Name = "ItemBackground"
 ItemBackground.Parent = Background
@@ -484,6 +306,47 @@ InptTitle.Text = "this is a Textbox"
 InptTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 InptTitle.TextSize = 14.000
 InptTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+Dropdown.Name = "Dropdown"
+Dropdown.Parent = BoxItem
+Dropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Dropdown.BackgroundTransparency = 1.000
+Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Dropdown.BorderSizePixel = 0
+Dropdown.Position = UDim2.new(0, 0, 0.426056325, 0)
+Dropdown.Size = UDim2.new(0, 169, 0, 35)
+
+BDropdownTitle.Name = "BDropdownTitle"
+BDropdownTitle.Parent = Dropdown
+BDropdownTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BDropdownTitle.BackgroundTransparency = 1.000
+BDropdownTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BDropdownTitle.BorderSizePixel = 0
+BDropdownTitle.Size = UDim2.new(0, 168, 0, 15)
+BDropdownTitle.Font = Enum.Font.Unknown
+BDropdownTitle.Text = "Dropdown"
+BDropdownTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+BDropdownTitle.TextSize = 14.000
+BDropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+DropdownBG.Name = "DropdownBG"
+DropdownBG.Parent = Dropdown
+DropdownBG.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+DropdownBG.BorderColor3 = Color3.fromRGB(44, 44, 44)
+DropdownBG.Position = UDim2.new(0, 0, 0.5, 0)
+DropdownBG.Size = UDim2.new(0, 168, 0, 15)
+
+OptionDropdown.Name = "OptionDropdown"
+OptionDropdown.Parent = DropdownBG
+OptionDropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OptionDropdown.BackgroundTransparency = 1.000
+OptionDropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OptionDropdown.BorderSizePixel = 0
+OptionDropdown.Size = UDim2.new(0, 168, 0, 14)
+OptionDropdown.Font = Enum.Font.Unknown
+OptionDropdown.Text = "None"
+OptionDropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+OptionDropdown.TextSize = 14.000
 
 ItemUIPadding.Name = "ItemUIPadding"
 ItemUIPadding.Parent = ItemBackground
