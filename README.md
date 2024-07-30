@@ -1,2 +1,2 @@
-# lib dump
-i put lib here i use for saving or dumping
+# code dump
+i put lib and shit here i use for saving or dumping
